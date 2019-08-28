@@ -7,6 +7,9 @@ verify_ssl = true
 
 [packages]
 django = "*"
+django-extensions = "*"
+django-extra-views = "*"
+django-geojson = "*"
 
 [requires]
 python_version = "3.7"
