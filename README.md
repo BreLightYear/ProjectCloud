@@ -42,4 +42,8 @@
 
   
 
-- Python versão (*3.7.5*)
+- Python- (*3.7.4*)
+- Django - 
+- Django-extensions
+- Django-extra-views
+- Django-geojson
