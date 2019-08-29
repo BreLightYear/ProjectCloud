@@ -10,6 +10,7 @@ django = "*"
 django-extensions = "*"
 django-extra-views = "*"
 django-geojson = "*"
+pyrebase = "*"
 
 [requires]
 python_version = "3.7"
