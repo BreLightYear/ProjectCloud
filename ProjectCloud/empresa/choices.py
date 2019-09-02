@@ -10,7 +10,6 @@ REGION = (
     ('2', "Rio de Janeiro"),
 )
 
-
 COUNTRY= (
     ('0', " "),
     ('1', "Brasil"),
