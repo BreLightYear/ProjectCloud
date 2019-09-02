@@ -17,7 +17,7 @@ class Person(models.Model):
     #zip_code = models.ForeignKey(on_delete=models.SET_NULL, blank=True, null=True,)
     adress= models.CharField(max_length=50, verbose_name=_('Endereço'), help_text=('Digite seu endereço'))
     sex= models.CharField(choices= TYPE_SEX, blank= False, max_length=50, verbose_name=_('Sexo'), help_text=('Selecione seu sexo'))
-    created_in= models.DateTimeField(auto_now=False)
+    created_in= models.DateTimeField(auto_now_add=False, default=timezone.now)
 
 
     def __str__(self):
