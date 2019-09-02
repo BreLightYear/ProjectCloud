@@ -12,6 +12,7 @@ django-extra-views = "*"
 django-geojson = "*"
 pyrebase = "*"
 djangorestframework = "*"
+pygments = "*"
 
 [requires]
 python_version = "3.7"
