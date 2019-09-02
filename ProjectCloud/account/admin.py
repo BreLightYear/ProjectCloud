@@ -6,6 +6,6 @@ from .models import Person
 
 class PersonAdmin(admin.ModelAdmin):
     model = Person
-    fields= ('name', 'name2', 'email', 'country', 'region', 'adress', 'sex', 'user_photo')
+    fields= ('name', 'name2', 'email', 'country', 'region', 'adress', 'sex')
 
 admin.site.register(Person, PersonAdmin)
