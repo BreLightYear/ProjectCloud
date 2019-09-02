@@ -47,3 +47,5 @@
 - Django-extensions
 - Django-extra-views
 - Django-geojson
+- DjangoRestFramework
+- Pygments
