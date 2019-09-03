@@ -1,5 +1,6 @@
 #/usr/bin/env python
 # -*- coding:UTF-8 -*-
+import uuid
 from django.db import models
 from .choices import TYPE_SEX, REGION, COUNTRY
 from django.utils.translation import gettext_lazy as _
@@ -8,6 +9,7 @@ from .validators import validate_CPF, validate_CNPJ
 # Create your models here.
 
 class Person(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name= models.CharField(max_length=50, verbose_name=_('Nome'), help_text=('Digite seu nome'))
     name2= models.CharField(max_length=50, verbose_name=_('Sobrenome'), help_text=('Digite seu sobrenome'))
     email= models.EmailField(max_length=254, verbose_name=_('E-mail'), help_text=('Digite seu e-mail'))
