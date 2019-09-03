@@ -4,9 +4,9 @@ from django.forms import ValidationError
 from django.utils.translation import ugettext_lazy as _
 
 error_messages = {
-    'invalid': _("Invalid CPF number."),
-    'digits_only': _("This field requires only numbers."),
-    'max_digits': _("This field requires exactly 11 digits."),
+    'invalid': _("Numero de CPF inválido."),
+    'digits_only': _("Digite somente numeros."),
+    'max_digits': _("Digite somente 11 digitos."),
 }
 
 
