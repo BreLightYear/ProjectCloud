@@ -11,8 +11,8 @@ django-extensions = "*"
 django-extra-views = "*"
 django-geojson = "*"
 pyrebase = "*"
-djangorestframework = "*"
 pygments = "*"
+djangorestframework = "*"
 
 [requires]
 python_version = "3.7"

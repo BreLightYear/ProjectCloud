@@ -1,3 +1,4 @@
+import uuid
 from django.db import models
 from .choices import COUNTRY, REGION
 from account.validators import validate_CNPJ
@@ -7,6 +8,7 @@ from django.utils.translation import gettext as _
 
 
 class Empresa(models.Model):
+    #id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False, verbose_name=_('ID EMPRESA'))
     company= models.CharField(max_length=50, verbose_name=_('Empresa'), help_text=('Digite o nome'))
     country= models.IntegerField(choices=COUNTRY, default=0)
     region= models.CharField(max_length=50, choices=REGION, default=0)
