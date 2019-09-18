@@ -7,7 +7,7 @@
 
 # Como iniciar o projeto:
 
-  
+
 
 - Clone o repositório
 > `git clone https://github.com/BreLightYear/ProjectCloud.git`
@@ -40,7 +40,7 @@
 
 # Dependencias do projeto:
 
-  
+
 
 - Python- (*3.7.4*)
 - Django - 
