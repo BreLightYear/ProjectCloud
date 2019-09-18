@@ -10,18 +10,32 @@ from .validators import validate_CPF, validate_CNPJ
 
 class Person(models.Model):
     #id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    name = models.CharField(max_length=50, verbose_name=_('Nome'), help_text=('Digite seu nome'))
-    name2 = models.CharField(max_length=50, verbose_name=_('Sobrenome'), help_text=('Digite seu sobrenome'))
+    active = models.BooleanField( default= False, max_length=20, verbose_name=_('Ativo'))
+    name = models.CharField(max_length=50, verbose_name=_('Nome'), help_text=('Nome do Usuário'))
+    name2 = models.CharField(max_length=50, verbose_name=_('Sobrenome'), help_text=('Sobrenome do Usuário'))
     email = models.EmailField(max_length=254, verbose_name=_('E-mail'), help_text=('Digite seu e-mail'))
-    cpf = models.CharField(unique=True, max_length=12, verbose_name=_('CPF'), validators=[validate_CPF])
+    cpf = models.CharField(unique=True, max_length=12, verbose_name=_('Cpf'), validators=[validate_CPF])
     country = models.CharField(max_length=50, choices=COUNTRY, default=0, verbose_name=_('Pais'))
     region = models.CharField(max_length=50, choices=REGION, default=0, verbose_name=_('Região'))
-    #zip_code = models.ForeignKey(on_delete=models.SET_NULL, blank=True, null=True,)
-    adress = models.CharField(max_length=50, verbose_name=_('Endereço'), help_text=('Digite seu endereço'))
-    sex = models.CharField(choices= TYPE_SEX, blank= False, max_length=50, verbose_name=_('Sexo'), help_text=('Selecione seu sexo'))
+    adress = models.CharField(max_length=50, verbose_name=_('Endereço'), help_text=('Endereço do Usuário'))
+    sex = models.CharField(choices= TYPE_SEX, blank= False, max_length=50, verbose_name=_('Sexo'))
     #created_in= models.DateTimeField(auto_now_add=False, default=timezone.now)
 
 
     def __str__(self):
         return self.name
 
+class Company(models.Model):
+    #id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    active = models.BooleanField(default=False, max_length=50, verbose_name=_('Ativo'))
+    name = models.CharField(max_length=50, blank=True, help_text=('Nome da organização'))
+    cnpj = models.CharField(unique=True, validators=[validate_CNPJ], verbose_name=_('CNPJ'), max_length=50)
+    adress = models.CharField(max_length=50, verbose_name=_('Endereço')) 
+    region = models.CharField(max_length=50, choices=REGION, default=0, verbose_name=_('Região'))
+
+    verbose_name = ['Empresa']
+    verbose_name_plural = ['Empresas']
+    
+
+    def __str__(self):
+        return self.name

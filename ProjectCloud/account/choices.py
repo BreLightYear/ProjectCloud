@@ -1,15 +1,17 @@
 
 
 TYPE_SEX = [
-    ('0', " "),
+    ('0', ""),
     ('1', "Homem"),
     ('2', "Mulher")
 ]
 
 REGION = [
     ('0', " "),
-    ('1', "Sao Paulo"),
-    ('2', "Rio de Janeiro")
+    ('1', "São Bernardo"),
+    ('2', "Diadema"),
+    ('3', "Santo André"),
+    ('4', "São Caetano do Sul"),
 ]
 
 COUNTRY = [
