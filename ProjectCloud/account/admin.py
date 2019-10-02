@@ -11,6 +11,7 @@ class PersonAdmin(admin.ModelAdmin):
 class CompanyAdmin(admin.ModelAdmin):
     model = Company
     fields = ('name', 'active', 'cnpj', 'adress', 'region')
+    list_filter = ('active', 'region')
 
 
 admin.site.register(Person, PersonAdmin)
