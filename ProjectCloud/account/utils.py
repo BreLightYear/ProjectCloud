@@ -6,5 +6,3 @@ def is_professional(is_professional=None):
         return True
     else:
         return False
-
-def Dots()
