@@ -13,6 +13,7 @@ django-geojson = "*"
 pyrebase = "*"
 pygments = "*"
 djangorestframework = "*"
+pillow = "*"
 
 [requires]
 python_version = "3.7"
