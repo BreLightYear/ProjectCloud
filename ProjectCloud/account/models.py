@@ -10,7 +10,7 @@ from .validators import validate_CPF, validate_CNPJ
 
 class Person(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    picture = models.FileField(upload_to=None, max_length=100, default='', editable=True)
+    #picture = models.FileField(max_length=100, default='', editable=True)
     active = models.BooleanField( default= False, max_length=20, verbose_name=_('Ativo'))
     name = models.CharField(max_length=50, verbose_name=_('Nome'), help_text=('Nome do Usuário'))
     name2 = models.CharField(max_length=50, verbose_name=_('Sobrenome'), help_text=('Sobrenome do Usuário'))

@@ -6,11 +6,11 @@ from .models import Person, Company
 
 class PersonAdmin(admin.ModelAdmin):
     model = Person
-    fields = ('active', 'name', 'name2', 'sex', 'cpf', 'email', 'country', 'region', 'adress')
+    fields = ('active', 'is_professional', 'picture', 'name', 'name2', 'sex', 'cpf', 'email', 'country', 'region', 'adress')
     list_filter = ('active','region')
 class CompanyAdmin(admin.ModelAdmin):
     model = Company
-    fields = ('name', 'active', 'cnpj', 'adress', 'region')
+    fields = ('name', 'active','name', 'cnpj', 'adress', 'region')
     list_filter = ('active', 'region')
 
 
