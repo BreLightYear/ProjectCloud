@@ -10,7 +10,7 @@ from .validators import validate_CPF, validate_CNPJ
 
 class Person(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    picture = models.ImageField(height_field=None, width_field=None, max_length=None)
+    #picture = models.ImageField(null=True, height_field=None, width_field=None, max_length=None)
     active = models.BooleanField( default= False, max_length=20, verbose_name=_('Ativo'))
     name = models.CharField(max_length=50, verbose_name=_('Nome'), help_text=('Nome do Usuário'))
     name2 = models.CharField(max_length=50, verbose_name=_('Sobrenome'), help_text=('Sobrenome do Usuário'))
@@ -20,7 +20,7 @@ class Person(models.Model):
     region = models.CharField(max_length=50, choices=REGION, default=0, verbose_name=_('Região'))
     adress = models.CharField(max_length=50, verbose_name=_('Endereço'), help_text=('Endereço do Usuário'))
     sex = models.CharField(choices= TYPE_SEX, blank= False, max_length=50, verbose_name=_('Sexo'))
-    is_professional = models.BooleanField(max_length=12, default=False, verbose_name=_('Ativo'), help_text=_('Se o usuário for Empresa/Profissional Ativado'))
+    is_professional = models.BooleanField(max_length=12, default=False, verbose_name=_('Ativo'), help_text=_('Se o usuário for Profissional Ativado'))
     #created_in= models.DateTimeField(auto_now_add=False, default=timezone.now)
 
 
@@ -37,6 +37,8 @@ class Company(models.Model):
     cnpj = models.CharField(unique=True, validators=[validate_CNPJ], verbose_name=_('CNPJ'), max_length=50)
     adress = models.CharField(max_length=50, verbose_name=_('Endereço')) 
     region = models.CharField(max_length=50, choices=REGION, default=0, verbose_name=_('Região'))
+    text = models.CharField(max_length=50)
+    
 
     verbose_name = ['Empresa']
     verbose_name_plural = ['Empresas']
